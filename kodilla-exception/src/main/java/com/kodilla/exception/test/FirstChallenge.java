@@ -29,7 +29,12 @@ public class FirstChallenge {
         ExceptionHandling exceptionHandling = new ExceptionHandling();
         exceptionHandling.showMustGoOn();
 
+        //8.4
+        RouteNotFoundException routeNotFoundException = new RouteNotFoundException();
+        routeNotFoundException.getFlightFounder();
+
 
 
     }
+
 }
