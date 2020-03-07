@@ -30,10 +30,16 @@ public class FirstChallenge {
         exceptionHandling.showMustGoOn();
 
         //8.4
-        RouteNotFoundException routeNotFoundException = new RouteNotFoundException();
-        routeNotFoundException.getFlightFounder();
-
-
+        Flight flight  = new Flight("Moskow", "Warsaw");
+        flight = new Flight("Paris", "Berlin");
+        flight = new Flight("Milan", "Malme");
+        flight = new Flight("Malme", "Paris");
+        flight = new Flight("Berlin", "Moskow");
+        flight = new Flight("Milan", "Paris");
+        flight = new Flight("Warsaw", "Singapur");
+        flight = new Flight("Kiev", "London");
+        FlingFounder flingFounder = new FlingFounder();
+        flingFounder.findFlinght(flight);
 
     }
 

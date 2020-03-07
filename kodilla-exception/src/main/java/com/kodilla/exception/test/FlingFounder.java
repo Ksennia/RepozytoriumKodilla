@@ -4,33 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlingFounder {
-    Flight flight;
-    private  Map<String, Boolean> flightFounder;
 
-    public HashMap<String, Boolean> findFlinght(Flight flight) throws Exception {
-        flightFounder = new HashMap<String, Boolean>();
+        public boolean findFlinght(Flight flight) {
+             Map<String, Boolean> airports  = new HashMap<String, Boolean>();
+            airports.put("Moskow", true);
+            airports.put("Berlin", true);
+            airports.put("Warsaw", true);
+            airports.put("Gdansk", false);
 
+            if (airports.get(flight.getArrivalAirport()) == null ) {
+                throw new RouteNotFoundException();
+            }
+            if (airports.get(flight.getDepartureAirport()) == null) {
+                throw new RouteNotFoundException();
+            }
 
-        flight = new Flight("Moskow", "Warsaw");
-        flight = new Flight("Paris", "Berlin");
-        flight = new Flight("Milan", "Malme");
-        flight = new Flight("Malme", "Paris");
-        flight = new Flight("Berlin", "Moskow");
-        flight = new Flight("Milan", "Paris");
-        flight = new Flight("Warsaw", "Singapur");
-        flight = new Flight("Kiev", "London");
+            return airports.get(flight.getArrivalAirport());
 
-
-
-        for(String flights: flight) {
-            flights = flight.getArrivalAirport();
-            flightFounder.put(flights, true);
-        }
-
-        if (flightFounder.containsValue(false)) {
-            throw new Exception();
-        }
-
-        return flightFounder(getKey(), getValue());
     }
 }
