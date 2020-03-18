@@ -21,62 +21,53 @@ public class ShapeCollectorTestSuite {
         @Test
         public void testCaseAddFigure() {
             //Given
-            Shape theCirkle = new Cirkle((int) 5.5);
+            Shape cirkle = new Cirkle();
+
             //When
             ShapeCollector shapeCollector = new ShapeCollector();
-            shapeCollector.addFigure(theCirkle);
+            shapeCollector.addFigure(cirkle);
+
             //Then
-            Assert.assertEquals(1, shapeCollector.addFigure((Shape) theCirkle));
+            Assert.assertEquals(1, shapeCollector.shapeList.size());
         }
         @Test
         public void testCaseRemoveFigure() {
             //Given
-            Shape theSquare = new Square(18);
+            Shape square = new Square();
+            Shape triangle = new Triangle();
+
             //When
             ShapeCollector shapeCollector = new ShapeCollector();
-            shapeCollector.addFigure(theSquare);
-            int result = shapeCollector.removeFigure(theSquare);
+            shapeCollector.addFigure(square);
+            shapeCollector.addFigure(triangle);
+            boolean result = shapeCollector.removeFigure(square);
+
             //then
-           // Assert.assertTrue(result);
-            Assert.assertEquals(0,result);
+            Assert.assertTrue(result);
+            Assert.assertEquals(0,shapeCollector.shapeList.size());
         }
         @Test
         public void testCaseGetFigure() {
             //Given
-            Shape figure = new Shape( ) {
-                @Override
-                public String getShapeName() {
-                    return "Cirkle";
-                }
-
-                @Override
-                public int getField() {
-                    return 20;
-                }
-            };
+            Shape shape = new Cirkle();
             //When
-            int field = figure.getField();
+            ShapeCollector shapeCollector = new ShapeCollector();
+            int field = shapeCollector.getFigure(shape.getField());
             //Then
             Assert.assertEquals(20, field);
         }
         @Test
         public void testCaseShowFigure() {
             //Given
-            Shape figure = new Shape( ) {
-                @Override
-                public String getShapeName() {
-                    return "Cirkle";
-                }
+            Shape shape = new Triangle();
 
-                @Override
-                public int getField() {
-                    return 20;
-                }
-            };
-            //then
-            String result = figure.getShapeName();
+            //When
+            ShapeCollector shapeCollector = new ShapeCollector();
+            //shapeCollector.addFigure(shape);
+            String  result = shapeCollector.showFigure(shape.getShapeName());
+
             // then
-            Assert.assertEquals("Cirkle", result);
+            Assert.assertEquals("Square", result);
         }
     }
 
