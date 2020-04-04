@@ -44,17 +44,22 @@ public class ShapeCollectorTestSuite {
 
             //then
             Assert.assertTrue(result);
-            Assert.assertEquals(0,shapeCollector.shapeList.size());
+            Assert.assertEquals(1,shapeCollector.shapeList.size());
         }
         @Test
         public void testCaseGetFigure() {
             //Given
-            Shape shape = new Cirkle();
+            Shape cirkle = new Cirkle();
+            Shape triangle = new Triangle();
+            Shape square = new Square();
             //When
             ShapeCollector shapeCollector = new ShapeCollector();
-            int field = shapeCollector.getFigure(shape.getField());
+            shapeCollector.addFigure(cirkle);
+            shapeCollector.addFigure(triangle);
+            shapeCollector.addFigure(square);
+            Shape result = shapeCollector.getFigure(2);
             //Then
-            Assert.assertEquals(20, field);
+            Assert.assertEquals(result, square);
         }
         @Test
         public void testCaseShowFigure() {
@@ -63,11 +68,11 @@ public class ShapeCollectorTestSuite {
 
             //When
             ShapeCollector shapeCollector = new ShapeCollector();
-            //shapeCollector.addFigure(shape);
-            String  result = shapeCollector.showFigure(shape.getShapeName());
+            shapeCollector.addFigure(shape);
+            shapeCollector.showFigure();
 
             // then
-            Assert.assertEquals("Square", result);
+
         }
     }
 

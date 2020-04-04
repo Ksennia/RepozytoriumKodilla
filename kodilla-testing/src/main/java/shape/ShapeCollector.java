@@ -1,26 +1,25 @@
 package shape;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollector {
     Shape shape;
-    List<Shape> shapeList;
+    List<Shape> shapeList = new ArrayList<>();
     public int addFigure(Shape shape){
-        shapeList.add(new Cirkle());
+        shapeList.add(shape);
         return shapeList.size();
     }
 
     public boolean removeFigure(Shape shape){
-        shapeList.remove(new Square());
+        shapeList.remove(shape);
         return true;
     }
-    public int getFigure(int n){
-        shape = new Cirkle();
-        return shape.getField();
+    public Shape getFigure(int n){
+        return  shapeList.get(n);
     }
-    public String  showFigure(String shapeName){
-        shape = new Triangle();
-        return shape.getShapeName();
+    public void  showFigure(){
+        System.out.println(shapeList);
     }
 
 }
