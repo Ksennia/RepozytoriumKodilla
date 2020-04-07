@@ -1,11 +1,10 @@
 package com.kodilla.good.patterns.challenges;
 
-public class ProductOrderService implements OrderServiсe{
+public class ProductOrderService implements OrderService{
 
 
     @Override
-    public boolean order(final User user, final Product product
-    ) {
+    public boolean order(final User user, final Product product) {
         System.out.println("Buyer " + user.getName() + user.getSurname()
                 + " order " + product.getQuantityOfProduct() + " pieces of " +
                 product.getNameOfProduct() + " price " + product.getPriceOfProduct());

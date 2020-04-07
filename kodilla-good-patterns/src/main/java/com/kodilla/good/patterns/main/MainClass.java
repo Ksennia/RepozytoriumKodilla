@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.main;
 
 import com.kodilla.good.patterns.challenges.*;
 
-import java.util.Arrays;
+
 
 
 public class MainClass {
@@ -17,5 +17,6 @@ public class MainClass {
         OrderProcessor orderProcessor = new OrderProcessor(
                 new MailService(), new ProductOrderService(), new ProductOrderRepository());
         orderProcessor.process(orderRequest);
+
     }
 }

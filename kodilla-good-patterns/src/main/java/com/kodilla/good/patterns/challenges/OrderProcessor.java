@@ -2,18 +2,18 @@ package com.kodilla.good.patterns.challenges;
 
 public class OrderProcessor {
     private InformationService informationService;
-    private OrderServiсe orderServiсe;
+    private OrderService orderService;
     private OrderRepository orderRepository;
 
     public OrderProcessor( final InformationService informationService,
-                           final OrderServiсe orderServiсe,
+                           final OrderService orderService,
                            final OrderRepository orderRepository) {
         this.informationService = informationService;
-        this.orderServiсe = orderServiсe;
+        this.orderService = orderService;
         this.orderRepository = orderRepository;
     }
     public OrderDto process (final OrderRequest orderRequest) {
-        boolean isOrdered = orderServiсe.order(orderRequest.getUser(), orderRequest.getProduct());
+        boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getProduct());
         if(isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct());
