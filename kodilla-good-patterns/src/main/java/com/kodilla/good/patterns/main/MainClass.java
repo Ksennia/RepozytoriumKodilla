@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.main;
 
-import com.kodilla.good.patterns.challenges.MovieStore;
+import com.kodilla.good.patterns.challenges.*;
 
 import java.util.Arrays;
 
@@ -11,5 +11,11 @@ public class MainClass {
                 .flatMap(e -> e.getValue().stream())
                 .map(entry -> entry + "!")
                 .forEach(System.out :: print);
+
+        OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
+        OrderRequest orderRequest = orderRequestRetriever.retrieve();
+        OrderProcessor orderProcessor = new OrderProcessor(
+                new MailService(), new ProductOrderService(), new ProductOrderRepository());
+        orderProcessor.process(orderRequest);
     }
 }
