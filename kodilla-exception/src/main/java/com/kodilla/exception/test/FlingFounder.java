@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FlingFounder {
 
-        public boolean findFlinght(Flight flight) {
+        public boolean findFlinght(Flying flight) {
              Map<String, Boolean> airports  = new HashMap<String, Boolean>();
             airports.put("Moskow", true);
             airports.put("Berlin", true);

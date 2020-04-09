@@ -30,14 +30,14 @@ public class FirstChallenge {
         exceptionHandling.showMustGoOn();
 
         //8.4
-        Flight flight  = new Flight("Moskow", "Warsaw");
-        flight = new Flight("Paris", "Berlin");
-        flight = new Flight("Milan", "Malme");
-        flight = new Flight("Malme", "Paris");
-        flight = new Flight("Berlin", "Moskow");
-        flight = new Flight("Milan", "Paris");
-        flight = new Flight("Warsaw", "Singapur");
-        flight = new Flight("Kiev", "London");
+        Flying flight  = new Flying("Moskow", "Warsaw");
+        flight = new Flying("Paris", "Berlin");
+        flight = new Flying("Milan", "Malme");
+        flight = new Flying("Malme", "Paris");
+        flight = new Flying("Berlin", "Moskow");
+        flight = new Flying("Milan", "Paris");
+        flight = new Flying("Warsaw", "Singapur");
+        flight = new Flying("Kiev", "London");
         FlingFounder flingFounder = new FlingFounder();
         flingFounder.findFlinght(flight);
 
