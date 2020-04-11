@@ -1,26 +1,30 @@
 package com.kodilla.good.patterns.challenges.lakeair;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FlyingRepository {
-    private Map<String, String> airports;
-    public final Map<String, String> flyingList(final Flying flying) {
-        Map<String, String> airports = new HashMap<>();
-        airports.put("Warsaw" , "Gdansk");
-        airports.put("Gdansk", "Moskow");
-        airports.put("Berlin", "Tokyo");
-        airports.put("London", "Tenerife");
-        airports.put("Kyiv", "Dnipro");
-        airports.put("Dnipro", "London");
-        airports.put("Dnipro", "Warsaw");
-        airports.put("London", "Warsaw");
+    private Set<Flying> airports = new HashSet<Flying>();
 
-        return airports;
+    public FlyingRepository() {
+        putAirports();
     }
 
-    public Map<String, String> getAirports() {
+    public final void putAirports() {
+
+        airports.add(new Flying("Warsaw" , "Gdansk"));
+        airports.add(new Flying("Gdansk", "Moskow"));
+        airports.add(new Flying("Berlin", "Tokyo"));
+        airports.add(new Flying("London", "Tenerife"));
+        airports.add(new Flying("Kyiv", "Dnipro"));
+        airports.add(new Flying("Dnipro", "London"));
+        airports.add(new Flying("Dnipro", "Warsaw"));
+        airports.add(new Flying("London", "Warsaw"));
+
+
+    }
+
+    public Set<Flying> getAirports() {
         return airports;
     }
 }

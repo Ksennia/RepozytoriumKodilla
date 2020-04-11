@@ -1,27 +1,37 @@
 package com.kodilla.good.patterns.challenges.lakeair;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class FlyingFounder {
-    public void findFly() {
-        FlyingRepository flyingRepository = new FlyingRepository();
-        HashMap<String, String> founder = (HashMap<String, String>) flyingRepository.getAirports();
+    private FlyingRepository flyingRepository = new FlyingRepository();
 
-        String poitDeparture = "London";
-        String pointArrival = "Warsaw";
-        String transfer;
+    public List<Flying> findFlyingFrom (String departure) {
 
-        founder.entrySet().stream()
-                .filter(e -> e.getKey().equals(pointArrival))
-                .forEach(System.out ::println);
+        return flyingRepository.getAirports().stream()
+                .filter(e -> e.getDepartureAiport().equals(departure))
+                .collect(Collectors.toList());
+    }
 
-        founder.entrySet().stream()
-                .filter(e -> e.getValue().equals(poitDeparture))
-                .forEach(System.out :: println);
+    public List<Flying> findFlyingTo ( String arrival) {
+        return flyingRepository.getAirports().stream()
+                .filter(e -> e.getArrivalAirport().equals(arrival))
+                .collect(Collectors.toList());
+    }
+    public List<Flying> findFlyingFromTo( String departure, String arrival) {
 
+        List<Flying> listDeparture =  findFlyingFrom(departure);
 
+        List<Flying> listTo = listDeparture.stream().flatMap(transfer ->  findFlyingFrom(transfer.getArrivalAirport()).stream()).filter(transfer -> transfer.getArrivalAirport().equals(arrival))
+                .collect(Collectors.toSet()).stream().collect(Collectors.toList());
+        List<Flying> listDepartureTo = Stream.concat(listDeparture.stream(), listTo.stream())
+                .collect(Collectors.toList());
+        return listDepartureTo;
          }
+
 }

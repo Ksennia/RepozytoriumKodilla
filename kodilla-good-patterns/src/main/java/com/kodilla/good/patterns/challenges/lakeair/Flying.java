@@ -3,10 +3,10 @@ package com.kodilla.good.patterns.challenges.lakeair;
 import java.util.Objects;
 
 public class Flying {
-    private String departureAiport;
-    private String arrivalAirport;
+    private final String departureAiport;
+    private final String arrivalAirport;
 
-    public Flying(String departureAiport, String arrivalAirport) {
+    public Flying(final String departureAiport, final String arrivalAirport) {
         this.departureAiport = departureAiport;
         this.arrivalAirport = arrivalAirport;
     }
@@ -19,13 +19,6 @@ public class Flying {
         return arrivalAirport;
     }
 
-    public void setDepartureAiport(String departureAiport) {
-        this.departureAiport = departureAiport;
-    }
-
-    public void setArrivalAirport(String arrivalAirport) {
-        this.arrivalAirport = arrivalAirport;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -39,5 +32,13 @@ public class Flying {
     @Override
     public int hashCode() {
         return Objects.hash(getDepartureAiport(), getArrivalAirport());
+    }
+
+    @Override
+    public String toString() {
+        return "Flying{" +
+                "departureAiport='" + departureAiport + '\'' +
+                ", arrivalAirport='" + arrivalAirport + '\'' +
+                '}';
     }
 }

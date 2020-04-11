@@ -4,6 +4,9 @@ import com.kodilla.good.patterns.challenges.*;
 import com.kodilla.good.patterns.challenges.foot2door.*;
 import com.kodilla.good.patterns.challenges.lakeair.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainClass {
     public static void main ( String[] args) {
@@ -23,7 +26,13 @@ public class MainClass {
         Processor processor = new Processor( new SendigFacture(), new ProductPurchaseService());
         processor.process(producerRequest);
 
-       // FlyingFounder flyingFounder = new FlyingFounder();
-        //flyingFounder.findFly();
+       FlyingFounder flyingFounder = new FlyingFounder();
+        List<Flying> listFrom =   flyingFounder.findFlyingFrom("London");
+        List<Flying> listTo = flyingFounder.findFlyingTo("Warsaw");
+        List<Flying> listFromTo = flyingFounder.findFlyingFromTo("Kyiv", "Warsaw");
+
+        System.out.println(listFrom);
+        System.out.println(listTo);
+        System.out.println(listFromTo);
     }
 }
