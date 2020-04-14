@@ -1,4 +1,4 @@
-package forum;
+package com.kodilla.testing.forum;
 
 import org.junit.Assert;
 import org.junit.Test;
