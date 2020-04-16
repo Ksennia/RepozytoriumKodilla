@@ -13,8 +13,6 @@ public class BoardConfig {
     TaskList toDoList;
     TaskList inProgressList;
     TaskList doneList;
-    @Bean
-    public Board getBoard() { return new Board( getListToDo(), getInProgress(), getDone()); }
 
     @Bean(name = "toDo")
     @Scope("prototype")

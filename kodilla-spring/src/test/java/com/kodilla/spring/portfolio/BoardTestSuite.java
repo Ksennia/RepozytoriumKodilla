@@ -22,6 +22,7 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
 
         //When
+        context.getBean("ToDo");
 
 
     }
