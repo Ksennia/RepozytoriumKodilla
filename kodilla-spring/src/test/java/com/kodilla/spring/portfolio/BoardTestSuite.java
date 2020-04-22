@@ -22,7 +22,14 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
 
         //When
-        context.getBean("ToDo");
+        board.getToDoList().getTasks().add("TASK to do");
+        board.getInProgressList().getTasks().add("TASK in progress");
+        board.getDoneList().getTasks().add("TASK done");
+
+        //Then
+        Assert.assertEquals(board.getToDoList().getTasks().get(0), "TASK to do");
+        Assert.assertEquals(board.getInProgressList().getTasks().get(0), "TASK in progress");
+        Assert.assertEquals(board.getDoneList().getTasks().get(0), "TASK done");
 
 
     }
