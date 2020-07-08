@@ -1,11 +1,22 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.retrieveFirstThreeLetter",
+        query = "SELECT * FROM COMPANY AS C " +
+                "WHERE C.NAME LIKE 'SOF%'",
+        resultClass = Company.class
+)
+@NamedQuery(
+        name = "Company.searchCompany",
+        query = "FROM COMPANY WHERE name LIKE : ARG == %COMPANY_NAME%"
+)
 
 @Entity
 @Table(name = "COMPANIES")
