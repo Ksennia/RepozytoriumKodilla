@@ -9,7 +9,7 @@ import java.util.List;
 @org.hibernate.annotations.NamedQueries({
         @org.hibernate.annotations.NamedQuery(
                 name = "Employee.retrieveLastname",
-                query = "from EMPLOYEES WHERE lastname = :LASTNAME"),
+                query = " from EMPLOYEES WHERE lastname == :LASTNAME"),
         @org.hibernate.annotations.NamedQuery(
                 name = "Employee.searchEmployee",
                 query = "from EMPLOYEES WHERE lastname LIKE : ARG == %LASTNAME%"

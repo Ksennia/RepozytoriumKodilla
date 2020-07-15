@@ -14,5 +14,5 @@ public class WatcherFacade {
     "&& target(object)")
     public void logEvent(Object object) {
         LOGGER.info("Start method of class " + object.getClass().getName());
-    }
+     }
 }

@@ -7,16 +7,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
+@org.hibernate.annotations.NamedNativeQuery(
         name = "Company.retrieveFirstThreeLetter",
         query = "SELECT * FROM COMPANY AS C " +
                 "WHERE C.NAME LIKE 'SOF%'",
-        resultClass = Company.class
-)
-@NamedQuery(
+        resultClass = Company.class)
+
+@org.hibernate.annotations.NamedQuery(
         name = "Company.searchCompany",
-        query = "FROM COMPANY WHERE name LIKE : ARG == %COMPANY_NAME%"
-)
+        query = "FROM COMPANY WHERE name LIKE : ARG == %COMPANY_NAME%")
+
 
 @Entity
 @Table(name = "COMPANIES")

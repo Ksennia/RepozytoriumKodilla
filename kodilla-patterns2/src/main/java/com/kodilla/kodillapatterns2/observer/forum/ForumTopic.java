@@ -16,6 +16,7 @@ public class ForumTopic implements Observable{
 
     public void addPost(String post) {
         messages.add(post);
+        notifyObservers();
     }
 
     @Override
@@ -33,5 +34,13 @@ public class ForumTopic implements Observable{
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
+    }
+
+    public List<String> getMessages() {
+        return messages;
+    }
+
+    public String getName() {
+        return name;
     }
 }
