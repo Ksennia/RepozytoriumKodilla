@@ -8,16 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 @org.hibernate.annotations.NamedQueries({
         @org.hibernate.annotations.NamedQuery(
-                name = "Employee.retrieveLastname",
-                query = " from EMPLOYEES WHERE lastname == :LASTNAME"),
+                name = "Employee.retrieveEmployeesWithLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
         @org.hibernate.annotations.NamedQuery(
-                name = "Employee.searchEmployee",
-                query = "from EMPLOYEES WHERE lastname LIKE : ARG == %LASTNAME%"
+                name = "Employee.retrieveEmployeesWithLastNameContaining",
+                //query = "FROM Employee WHERE lastname like :LASTNAME_PART"
+                query = "FROM Employee WHERE lastname like concat('%',:LASTNAME,'%')"
         )
 })
 @Entity
 @Table(name = "EMPLOYEES")
-@Component
 public class Employee {
     private int id;
     private String firstname;

@@ -4,18 +4,19 @@ import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.task.dao.TaskDao;
 import com.kodilla.hibernate.tasklist.TaskList;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
-@RunWith(SpringRunner.class)
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+
 @SpringBootTest
 public class TaskListDaoTestSuite {
 
@@ -36,7 +37,7 @@ public class TaskListDaoTestSuite {
         List<TaskList> readTaskList = taskListDao.findByListName(listName);
 
         //Then
-        Assert.assertEquals("To_DO_LIST", readTaskList.get(0).getListName());
+        assertEquals("To_DO_LIST", readTaskList.get(0).getListName());
 
         //CleanUp
         int id = readTaskList.get(0).getId();
@@ -63,7 +64,7 @@ public class TaskListDaoTestSuite {
         int id = taskList.getId();
 
         //Then
-        Assert.assertNotEquals(0, id);
+        assertNotEquals(0, id);
 
         //CleanUp
         taskListDao.deleteById(id);
@@ -109,10 +110,10 @@ public class TaskListDaoTestSuite {
 
         //Then
         try {
-            Assert.assertEquals(1, longTasks.size());
-            Assert.assertEquals(3, shortTasks.size());
-            Assert.assertEquals(3, enoughTimeTasks.size());
-            Assert.assertEquals(2, durationLongerThanTasks
+            assertEquals(1, longTasks.size());
+            assertEquals(3, shortTasks.size());
+            assertEquals(3, enoughTimeTasks.size());
+            assertEquals(2, durationLongerThanTasks
             );
         } finally {
             //CleanUp

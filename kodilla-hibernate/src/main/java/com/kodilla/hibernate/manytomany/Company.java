@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @org.hibernate.annotations.NamedNativeQuery(
-        name = "Company.retrieveFirstThreeLetter",
-        query = "SELECT * FROM COMPANY AS C " +
-                "WHERE C.NAME LIKE 'SOF%'",
-        resultClass = Company.class)
-
+        name = "Company.retrieveCompaniesWithNamesBeginWith",
+        query = "SELECT * FROM companies WHERE MID(company_name, 1, 3) = :FIRSTTHREECHARACTERS",
+        resultClass = Company.class
+)
 @org.hibernate.annotations.NamedQuery(
-        name = "Company.searchCompany",
-        query = "FROM COMPANY WHERE name LIKE : ARG == %COMPANY_NAME%")
-
-
+        name = "Company.retrieveCompaniesWithNamesContaining",
+        query = "FROM Company WHERE name like concat('%',:COMPANY_NAME,'%')"
+)
 @Entity
-@Table(name = "COMPANIES")
+@Table(name="COMPANIES")
 public class Company {
     private int id;
     private String name;
