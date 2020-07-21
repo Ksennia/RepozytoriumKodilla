@@ -9,12 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository
 @Transactional
+@Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
+
     @Query
     List<Employee> retrieveLastname(@Param("LASTNAME") String lastname);
 
     @Query
-    Employee searchEmployee(@Param("LASTNAME") String lastname);
+    List<Employee> searchEmployee(@Param("LASTNAME_PARTw3`") String lastname);
 }

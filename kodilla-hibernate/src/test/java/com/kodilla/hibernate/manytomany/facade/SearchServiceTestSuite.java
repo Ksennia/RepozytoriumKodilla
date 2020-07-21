@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class SearchServiceTestSuite {
 
-    @Autowired
-    private SearchService searchService;
+//    @Autowired
+//    private SearchService searchService;
     @Autowired
     CompanyDao companyDao;
     @Autowired
@@ -44,8 +44,8 @@ class SearchServiceTestSuite {
         employeeDao.save(lindaKovalsky);
 
         //when
-        List<Company> nameCompany = searchService.searchCompanyByName("Dat");
-        List<Employee> employeeName = searchService.searchEmployeeByName("th");
+        List<Company> nameCompany = companyDao.searchCompany("Dat");
+        List<Employee> employeeName = employeeDao.searchEmployee("th");
 
         // Then
       //  try {

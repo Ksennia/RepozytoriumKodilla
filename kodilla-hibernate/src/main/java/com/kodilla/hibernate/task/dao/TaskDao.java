@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-@Repository
 @Transactional
+@Repository
 public interface TaskDao extends CrudRepository<Task, Integer> {
 
     List<Task> findByDuration(int duration);

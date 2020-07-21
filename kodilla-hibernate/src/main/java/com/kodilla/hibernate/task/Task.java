@@ -5,16 +5,16 @@ import com.kodilla.hibernate.tasklist.TaskList;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-@NamedQueries({
-        @NamedQuery(
+@org.hibernate.annotations.NamedQueries({
+        @org.hibernate.annotations.NamedQuery(
                 name = "Task.retrieveLongTasks",
                 query = "FROM Task WHERE duration > 10"
         ),
-        @NamedQuery(
+        @org.hibernate.annotations.NamedQuery(
                 name = "Task.retrieveShortTasks",
                 query = "FROM Task WHERE duration <= 10"
         ),
-        @NamedQuery(
+        @org.hibernate.annotations.NamedQuery(
                 name = "Task.retrieveTasksWithDurationLongerThan",
                 query = " FROM Task WHERE duration > :DURATION"
         )

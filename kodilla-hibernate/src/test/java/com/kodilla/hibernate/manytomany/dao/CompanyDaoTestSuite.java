@@ -1,13 +1,13 @@
 package com.kodilla.hibernate.manytomany.dao;
 
-import ch.qos.logback.classic.pattern.LineSeparatorConverter;
+
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.util.List;
 
@@ -58,13 +58,13 @@ public class CompanyDaoTestSuite {
         assertNotEquals(0, greyMatterId);
 
         //CleanUp
-        try {
-            companyDao.deleteById(softwareMachineId);
-            companyDao.deleteById(dataMaestersId);
-            companyDao.deleteById(greyMatterId);
-        } catch (Exception e) {
-            //do nothing
-        }
+//        try {
+//            companyDao.deleteById(softwareMachineId);
+//            companyDao.deleteById(dataMaestersId);
+//            companyDao.deleteById(greyMatterId);
+//        } catch (Exception e) {
+//            //do nothing
+//        }
     }
 
     @Test

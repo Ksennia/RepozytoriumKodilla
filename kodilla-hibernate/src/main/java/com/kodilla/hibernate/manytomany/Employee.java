@@ -13,8 +13,7 @@ import java.util.List;
         ),
         @org.hibernate.annotations.NamedQuery(
                 name = "Employee.retrieveEmployeesWithLastNameContaining",
-                //query = "FROM Employee WHERE lastname like :LASTNAME_PART"
-                query = "FROM Employee WHERE lastname like concat('%',:LASTNAME,'%')"
+                query = "FROM Employee WHERE lastname like concat('%',:LASTNAME_PART,'%')"
         )
 })
 @Entity
