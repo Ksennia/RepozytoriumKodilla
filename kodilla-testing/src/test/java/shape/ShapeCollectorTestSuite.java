@@ -1,19 +1,20 @@
 package shape;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ShapeCollectorTestSuite {
 
-        @Before
+        @BeforeEach
         public void before() {
             System.out.println("Test Case: begin");
         }
 
-        @After
+        @AfterEach
         public void after() {
             System.out.println("Test Case: end");
         }
@@ -28,7 +29,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(cirkle);
 
             //Then
-            Assert.assertEquals(1, shapeCollector.shapeList.size());
+            assertEquals(1, shapeCollector.shapeList.size());
         }
         @Test
         public void testCaseRemoveFigure() {
@@ -43,8 +44,8 @@ public class ShapeCollectorTestSuite {
             boolean result = shapeCollector.removeFigure(square);
 
             //then
-            Assert.assertTrue(result);
-            Assert.assertEquals(1,shapeCollector.shapeList.size());
+            assertTrue(result);
+            assertEquals(1,shapeCollector.shapeList.size());
         }
         @Test
         public void testCaseGetFigure() {
@@ -59,7 +60,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(square);
             Shape result = shapeCollector.getFigure(2);
             //Then
-            Assert.assertEquals(result, square);
+            assertEquals(result, square);
         }
         @Test
         public void testCaseShowFigure() {

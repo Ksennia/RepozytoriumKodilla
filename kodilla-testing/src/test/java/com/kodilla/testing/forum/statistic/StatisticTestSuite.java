@@ -1,12 +1,10 @@
 package com.kodilla.testing.forum.statistic;
-
-
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -34,12 +32,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(0, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(0, statisticCounter.quantityOfComments);
-        Assert.assertEquals(0, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(0, statisticCounter.quantityOfPosts);
+        assertEquals(0, statisticCounter.quantityOfComments);
+        assertEquals(0, averageAmountPostsOnUserRes, 0);
+        assertEquals(0, averageAmountCommentsOnPostRes, 0);
+        assertEquals(0, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba postów = 1000,
@@ -65,12 +63,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(1000, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(1000, statisticCounter.quantityOfComments);
-        Assert.assertEquals(10, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(1, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(10, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(1000, statisticCounter.quantityOfPosts);
+        assertEquals(1000, statisticCounter.quantityOfComments);
+        assertEquals(10, averageAmountPostsOnUserRes, 0);
+        assertEquals(1, averageAmountCommentsOnPostRes, 0);
+        assertEquals(10, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba komentarzy = 0
@@ -96,12 +94,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(1000, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(0, statisticCounter.quantityOfComments);
-        Assert.assertEquals(10, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(1000, statisticCounter.quantityOfPosts);
+        assertEquals(0, statisticCounter.quantityOfComments);
+        assertEquals(10, averageAmountPostsOnUserRes, 0);
+        assertEquals(0, averageAmountCommentsOnPostRes, 0);
+        assertEquals(0, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba komentarzy < liczba postów
@@ -127,12 +125,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(1000, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(50, statisticCounter.quantityOfComments);
-        Assert.assertEquals(10, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(0.05, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(0.5, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(1000, statisticCounter.quantityOfPosts);
+        assertEquals(50, statisticCounter.quantityOfComments);
+        assertEquals(10, averageAmountPostsOnUserRes, 0);
+        assertEquals(0.05, averageAmountCommentsOnPostRes, 0);
+        assertEquals(0.5, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba komentarzy > liczba postów,
@@ -158,12 +156,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(50, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(1000, statisticCounter.quantityOfComments);
-        Assert.assertEquals(0.5, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(20, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(10, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(50, statisticCounter.quantityOfPosts);
+        assertEquals(1000, statisticCounter.quantityOfComments);
+        assertEquals(0.5, averageAmountPostsOnUserRes, 0);
+        assertEquals(20, averageAmountCommentsOnPostRes, 0);
+        assertEquals(10, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba użytkowników = 0
@@ -189,12 +187,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(0, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(0, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(0, statisticCounter.quantityOfComments);
-        Assert.assertEquals(0, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(0, averageAmountCommentsOnUserRes, 0);
+        assertEquals(0, statisticCounter.quantityOfUsers);
+        assertEquals(0, statisticCounter.quantityOfPosts);
+        assertEquals(0, statisticCounter.quantityOfComments);
+        assertEquals(0, averageAmountPostsOnUserRes, 0);
+        assertEquals(0, averageAmountCommentsOnPostRes, 0);
+        assertEquals(0, averageAmountCommentsOnUserRes, 0);
     }
 
     //gdy liczba użytkowników = 100.
@@ -220,12 +218,12 @@ public class StatisticTestSuite {
         double averageAmountCommentsOnPostRes = statisticCounter.averageAmountCommentsOnPost;
         double averageAmountCommentsOnUserRes = statisticCounter.averageAmountCommentsOnUser;
         //Then
-        Assert.assertEquals(100, statisticCounter.quantityOfUsers);
-        Assert.assertEquals(200, statisticCounter.quantityOfPosts);
-        Assert.assertEquals(30, statisticCounter.quantityOfComments);
-        Assert.assertEquals(2, averageAmountPostsOnUserRes, 0);
-        Assert.assertEquals(0.15, averageAmountCommentsOnPostRes, 0);
-        Assert.assertEquals(0.3, averageAmountCommentsOnUserRes, 0);
+        assertEquals(100, statisticCounter.quantityOfUsers);
+        assertEquals(200, statisticCounter.quantityOfPosts);
+        assertEquals(30, statisticCounter.quantityOfComments);
+        assertEquals(2, averageAmountPostsOnUserRes, 0);
+        assertEquals(0.15, averageAmountCommentsOnPostRes, 0);
+        assertEquals(0.3, averageAmountCommentsOnUserRes, 0);
     }
 
 

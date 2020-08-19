@@ -1,10 +1,10 @@
 package com.kodilla.testing.weather.stub;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -25,6 +25,6 @@ public class WeatherForecastTestSuite {
         int quantityOfSensors = weatherForecast.calculateForecast().size();
 
         //Then
-        Assert.assertEquals(5, quantityOfSensors);
+        assertEquals(5, quantityOfSensors);
     }
 }
